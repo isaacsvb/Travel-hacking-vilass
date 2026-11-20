@@ -1,0 +1,11 @@
+# Local results and real balances — never commit these
+output/
+balances.json
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+build/
+dist/
