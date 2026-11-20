@@ -1,0 +1,11 @@
+{
+  "name": "travel-hacker-marketplace",
+  "owner": "isaacsvb",
+  "plugins": [
+    {
+      "name": "travel-hacker",
+      "source": ".",
+      "description": "Free-first travel hacking toolkit: award + cash flight search, points-vs-cash CPP math, loyalty balances, hotels, ferries, and Airbnb. Works with zero paid API keys."
+    }
+  ]
+}

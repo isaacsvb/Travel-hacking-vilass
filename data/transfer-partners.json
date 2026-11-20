@@ -1,0 +1,61 @@
+{
+  "_meta": {
+    "description": "Transferable bank-point currencies and their airline/hotel transfer partners with ratios. Ratio is bank:program (e.g. 1:1 means 1000 bank points = 1000 program miles).",
+    "last_updated": "2026-11-20",
+    "staleness_days": 60,
+    "notes": "Verify current ratios and active bonuses on the issuer site before transferring. Transfers are usually one-way and irreversible."
+  },
+  "currencies": {
+    "amex_membership_rewards": {
+      "name": "American Express Membership Rewards",
+      "airline_partners": {
+        "aeroplan": "1:1", "ana_mileage_club": "1:1", "avianca_lifemiles": "1:1",
+        "british_airways_avios": "1:1", "delta_skymiles": "1:1", "flying_blue": "1:1",
+        "singapore_krisflyer": "1:1", "virgin_atlantic_flying_club": "1:1",
+        "qatar_privilege_club": "1:1", "iberia_avios": "1:1", "etihad_guest": "1:1",
+        "emirates_skywards": "1:1"
+      },
+      "hotel_partners": {"hilton_honors": "1:2", "marriott_bonvoy": "1:1", "choice_privileges": "1:1"}
+    },
+    "chase_ultimate_rewards": {
+      "name": "Chase Ultimate Rewards",
+      "airline_partners": {
+        "united_mileageplus": "1:1", "aeroplan": "1:1", "british_airways_avios": "1:1",
+        "flying_blue": "1:1", "iberia_avios": "1:1", "singapore_krisflyer": "1:1",
+        "virgin_atlantic_flying_club": "1:1", "southwest_rapid_rewards": "1:1",
+        "jetblue_trueblue": "1:1", "korean_air_skypass": "1:1", "qatar_privilege_club": "1:1"
+      },
+      "hotel_partners": {"world_of_hyatt": "1:1", "marriott_bonvoy": "1:1", "ihg_one_rewards": "1:1"}
+    },
+    "bilt_rewards": {
+      "name": "Bilt Rewards",
+      "airline_partners": {
+        "united_mileageplus": "1:1", "american_aadvantage": "1:1", "aeroplan": "1:1",
+        "virgin_atlantic_flying_club": "1:1", "flying_blue": "1:1", "turkish_miles_and_smiles": "1:1",
+        "avianca_lifemiles": "1:1", "cathay_asia_miles": "1:1", "alaska_atmos": "1:1",
+        "british_airways_avios": "1:1", "iberia_avios": "1:1", "qatar_privilege_club": "1:1",
+        "emirates_skywards": "1:1"
+      },
+      "hotel_partners": {"world_of_hyatt": "1:1", "marriott_bonvoy": "1:1", "ihg_one_rewards": "1:1"}
+    },
+    "capital_one": {
+      "name": "Capital One Miles",
+      "airline_partners": {
+        "aeroplan": "1:1", "avianca_lifemiles": "1:1", "british_airways_avios": "1:1",
+        "flying_blue": "1:1", "singapore_krisflyer": "1:1", "turkish_miles_and_smiles": "1:1",
+        "etihad_guest": "1:1", "qantas_frequent_flyer": "1:1", "emirates_skywards": "4:3"
+      },
+      "hotel_partners": {"accor_all": "2:1", "wyndham_rewards": "1:1", "choice_privileges": "1:1"}
+    },
+    "citi_thankyou": {
+      "name": "Citi ThankYou Rewards",
+      "airline_partners": {
+        "american_aadvantage": "1:1", "avianca_lifemiles": "1:1", "flying_blue": "1:1",
+        "singapore_krisflyer": "1:1", "turkish_miles_and_smiles": "1:1", "qatar_privilege_club": "1:1",
+        "virgin_atlantic_flying_club": "1:1", "jetblue_trueblue": "1:1", "etihad_guest": "1:1",
+        "emirates_skywards": "5:4", "cathay_asia_miles": "1:1"
+      },
+      "hotel_partners": {"choice_privileges": "1:2", "wyndham_rewards": "1:1", "accor_all": "2:1"}
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "_meta": {
+    "description": "Which loyalty program can issue award tickets on which operating airline, including cross-alliance and bilateral partnerships. Use to determine if a user can actually redeem on a specific airline, and the cheapest booking path.",
+    "last_updated": "2026-11-20",
+    "staleness_days": 90,
+    "notes": "Always verify partner availability on the booking program's own site before committing a transfer."
+  },
+  "programs": {
+    "united_mileageplus": {
+      "display_name": "United MileagePlus",
+      "alliance": "star_alliance",
+      "bookable": {"star_alliance": "all members", "non_alliance": ["Emirates (limited)"]},
+      "transfer_from": ["chase_ultimate_rewards", "bilt_rewards"],
+      "chart_type": "dynamic", "online_booking": true
+    },
+    "aeroplan": {
+      "display_name": "Air Canada Aeroplan",
+      "alliance": "star_alliance",
+      "bookable": {"star_alliance": "all members", "non_alliance": ["Etihad", "Juneyao"]},
+      "transfer_from": ["amex_membership_rewards", "chase_ultimate_rewards", "bilt_rewards", "capital_one"],
+      "chart_type": "distance_dynamic", "online_booking": true,
+      "notes": "Widest Star Alliance availability. Can book Lufthansa First. Per-passenger cancel fees."
+    },
+    "virgin_atlantic_flying_club": {
+      "display_name": "Virgin Atlantic Flying Club",
+      "alliance": "skyteam",
+      "bookable": {"skyteam": "all members", "cross_alliance": ["ANA (Star Alliance)"]},
+      "transfer_from": ["amex_membership_rewards", "chase_ultimate_rewards", "bilt_rewards", "citi_thankyou"],
+      "chart_type": "fixed", "online_booking": true,
+      "notes": "THE legendary cross-alliance sweet spot: ANA business/first at dramatically lower rates than any Star Alliance program. ANA must be booked by phone."
+    },
+    "avianca_lifemiles": {
+      "display_name": "Avianca LifeMiles",
+      "alliance": "star_alliance",
+      "bookable": {"star_alliance": "all members"},
+      "transfer_from": ["amex_membership_rewards", "bilt_rewards", "capital_one", "citi_thankyou"],
+      "chart_type": "fixed", "online_booking": true,
+      "notes": "Often prices Star Alliance awards cheaper than United/Aeroplan. No fuel surcharges on most awards."
+    },
+    "turkish_miles_and_smiles": {
+      "display_name": "Turkish Miles&Smiles",
+      "alliance": "star_alliance",
+      "bookable": {"star_alliance": "all members"},
+      "transfer_from": ["bilt_rewards", "capital_one", "citi_thankyou"],
+      "chart_type": "fixed", "online_booking": true,
+      "notes": "United domestic sweet spots. Turkey direct 65K J. Can be bureaucratic to book."
+    },
+    "american_aadvantage": {
+      "display_name": "American AAdvantage",
+      "alliance": "oneworld",
+      "bookable": {"oneworld": "all members", "non_alliance": ["Etihad", "JetBlue"]},
+      "transfer_from": ["bilt_rewards", "citi_thankyou"],
+      "chart_type": "dynamic", "online_booking": true,
+      "notes": "Cathay and JAL business/first are the targets. Web specials can be excellent."
+    },
+    "british_airways_avios": {
+      "display_name": "British Airways Executive Club (Avios)",
+      "alliance": "oneworld",
+      "bookable": {"oneworld": "all members", "non_alliance": ["Aer Lingus"]},
+      "transfer_from": ["amex_membership_rewards", "chase_ultimate_rewards", "bilt_rewards", "capital_one"],
+      "chart_type": "distance_based", "online_booking": true,
+      "notes": "Avios shared across BA, Iberia, Qatar, Finnair. Great for short-haul. WARNING: high fuel surcharges on BA-metal long-haul. Book partner airlines to avoid."
+    },
+    "iberia_avios": {
+      "display_name": "Iberia Plus (Avios)",
+      "alliance": "oneworld",
+      "bookable": {"oneworld": "all members"},
+      "transfer_from": ["amex_membership_rewards", "chase_ultimate_rewards", "bilt_rewards", "capital_one"],
+      "chart_type": "distance_based", "online_booking": true,
+      "notes": "40,500 Avios off-peak US East Coast to Madrid business class is a standout sweet spot."
+    },
+    "qatar_privilege_club": {
+      "display_name": "Qatar Privilege Club (Avios)",
+      "alliance": "oneworld",
+      "bookable": {"oneworld": "all members"},
+      "transfer_from": ["amex_membership_rewards", "chase_ultimate_rewards", "bilt_rewards", "capital_one", "citi_thankyou"],
+      "chart_type": "distance_based", "online_booking": true,
+      "notes": "Qsuites business class saver is the target. Low surcharges on Qatar metal."
+    },
+    "flying_blue": {
+      "display_name": "Air France-KLM Flying Blue",
+      "alliance": "skyteam",
+      "bookable": {"skyteam": "all members"},
+      "transfer_from": ["amex_membership_rewards", "chase_ultimate_rewards", "bilt_rewards", "capital_one", "citi_thankyou"],
+      "chart_type": "dynamic", "online_booking": true,
+      "notes": "Monthly promo awards. Free stopovers on one-way awards (by phone)."
+    },
+    "tap_miles_and_go": {
+      "display_name": "TAP Air Portugal Miles&Go",
+      "alliance": "star_alliance",
+      "bookable": {"star_alliance": "all members"},
+      "transfer_from": [],
+      "chart_type": "fixed", "online_booking": true,
+      "notes": "Lisbon-hubbed fixed award chart. Useful intra-Europe and to Portugal."
+    }
+  },
+  "cross_alliance_highlights": [
+    {
+      "name": "Virgin Atlantic to ANA",
+      "why": "The single most valuable cross-alliance partnership. ANA first/business from the US West Coast at far lower rates than any Star Alliance program.",
+      "transfer_currencies": ["amex_membership_rewards", "chase_ultimate_rewards", "bilt_rewards", "citi_thankyou"]
+    },
+    {
+      "name": "Etihad to American Airlines",
+      "why": "Etihad's fixed chart for AA metal is often cheaper than AA's own dynamic pricing.",
+      "transfer_currencies": ["amex_membership_rewards", "bilt_rewards", "capital_one", "citi_thankyou"]
+    }
+  ]
+}
