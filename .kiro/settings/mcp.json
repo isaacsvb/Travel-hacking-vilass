@@ -1,0 +1,43 @@
+{
+  "mcpServers": {
+    "skiplagged": {
+      "url": "https://mcp.skiplagged.com/mcp",
+      "disabled": false,
+      "autoApprove": ["*"]
+    },
+    "kiwi": {
+      "url": "https://mcp.kiwi.com",
+      "disabled": false,
+      "autoApprove": ["*"]
+    },
+    "trivago": {
+      "url": "https://mcp.trivago.com/mcp",
+      "disabled": false,
+      "autoApprove": ["*"]
+    },
+    "ferryhopper": {
+      "url": "https://mcp.ferryhopper.com/mcp",
+      "disabled": false,
+      "autoApprove": ["*"]
+    },
+    "seats-aero": {
+      "url": "https://seats.aero/mcp",
+      "disabled": false,
+      "autoApprove": ["*"]
+    },
+    "airbnb": {
+      "command": "npx",
+      "args": ["-y", "@openbnb/mcp-server-airbnb@latest", "--ignore-robots-txt"],
+      "disabled": false,
+      "autoApprove": ["*"]
+    },
+    "liteapi": {
+      "url": "https://mcp.liteapi.travel/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${LITEAPI_API_KEY}"
+      },
+      "disabled": true,
+      "autoApprove": ["*"]
+    }
+  }
+}
