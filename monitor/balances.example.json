@@ -1,0 +1,12 @@
+{
+  "_comment": "Optional. Copy to balances.json and fill in your real balances so checks can gate by what you can actually reach. All optional — omit this file and checks won't gate on reachability. Never commit real balances.",
+  "direct": {
+    "united_mileageplus": 16000,
+    "aeroplan": 0
+  },
+  "currencies": {
+    "chase_ultimate_rewards": 145000,
+    "amex_membership_rewards": 60000,
+    "bilt_rewards": 20000
+  }
+}
