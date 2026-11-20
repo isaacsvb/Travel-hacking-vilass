@@ -34,6 +34,10 @@ codex plugin marketplace add isaacsvb/Travel-hacking-vilass
 
 Then start Codex; the `travel-hacker` plugin appears in `/plugins`.
 
+### Kiro
+
+Kiro reads the toolkit's `.kiro/settings/mcp.json` and `.kiro/steering/` from this repo. Clone the repo into your Kiro workspace, then restart the session so the keyless MCP servers load. Full step-by-step (including the on-demand award checker and long-route tips): **[docs/USE-WITH-KIRO.md](docs/USE-WITH-KIRO.md)**.
+
 ### OpenCode (clone path)
 
 OpenCode has no plugin format, so clone the repo and launch from inside it:
