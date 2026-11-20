@@ -13,7 +13,7 @@ You ask  ──▶  th-monitor check ...  ──▶  searches seats.aero, comput
 ```
 
 - **On-demand only.** It does not run in the background and does not send Telegram/n8n alerts. (The spec for an autonomous alerting version lives in `docs/specs/backend-milhas/` if you ever want it.)
-- **Free-first.** Works with zero paid keys: seats.aero cached search covers roughly the next 60 days. Set `SEATS_AERO_API_KEY` to unlock live search and dates beyond the cache window.
+- **Free-first (with a caveat on how).** seats.aero has **no keyless REST endpoint** — its Partner API always requires a key. The genuinely free path is the **seats.aero MCP server** (next ~60 days), which an MCP client (Kiro) calls. So the free flow is: Kiro runs the seats.aero MCP search, saves the JSON, and this tool ranks it (`--mcp-json`). Set `SEATS_AERO_API_KEY` to let the CLI query the Partner API directly instead (live search + beyond 60 days).
 
 ## Install (one time)
 
@@ -24,6 +24,15 @@ pip install -e monitor          # from the repo root
 
 ## Run a check
 
+**Free path (no key):** let Kiro call the seats.aero MCP tool, save its JSON, then rank it:
+
+```bash
+th-monitor check --from SSA --to YQR --start 2026-12-22 --end 2027-01-25 \
+  --cabin economy --seats 2 --mcp-json output/mcp-raw.json
+```
+
+**Keyed path (`SEATS_AERO_API_KEY` set):** the CLI queries the Partner API directly:
+
 ```bash
 th-monitor check --from SFO --to NRT --start 2026-12-01 --end 2026-12-20 --cabin business
 ```
@@ -31,6 +40,7 @@ th-monitor check --from SFO --to NRT --start 2026-12-01 --end 2026-12-20 --cabin
 Options:
 - `--cabin` economy | premium_economy | business | first
 - `--seats N` minimum seats (default 1)
+- `--mcp-json FILE` keyless: availability JSON that Kiro fetched from the seats.aero MCP
 - `--balances balances.json` gate results by what you can actually reach (direct + transfers). Copy `balances.example.json` to `balances.json` and fill it in. Never commit real balances.
 - `--all` show everything, not just high-value / sweet spots
 - `--json` machine-readable output (also written to `monitor/output/latest.json`)
