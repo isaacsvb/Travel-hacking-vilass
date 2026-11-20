@@ -11,7 +11,7 @@ When the user asks about travel, flights, points, miles, awards, hotels, ferries
 Every core capability works with zero paid API keys. Paid keys are optional upgrades, never prerequisites.
 
 1. Never gate on a key. Do NOT ask "do you have key X?" before trying a tool. Try it; if it errors with a missing-credential message, catch it and fall through to a free source.
-2. Keyless base (always available): skiplagged + kiwi (cash flights), trivago (hotels), ferryhopper (ferries), airbnb (stays), seats-aero (cached award availability ~60 days). These MCP servers need no keys.
+2. Keyless base (always available): skiplagged + kiwi (cash flights), trivago (hotels), ferryhopper (ferries), airbnb (stays), seats-aero (award availability for the next ~60 days, via the MCP server — this is the keyless path; seats.aero has no keyless REST endpoint). These MCP servers need no keys.
 3. Optional upgrades (only if the env var is set): `SEATS_AERO_API_KEY` (live award search, >60 days, alerts), `LITEAPI_API_KEY` (live hotel rates — the `liteapi` server is disabled by default; enable it only after the key is set). If a key is absent, skip the source silently.
 4. One upgrade hint at the end: if, and only if, a missing optional key would have materially improved THIS result, mention that one key in a single closing line.
 

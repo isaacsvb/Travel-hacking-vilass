@@ -16,10 +16,18 @@ import json
 import sys
 from pathlib import Path
 
+import json as _json
+from pathlib import Path as _Path
+
 from .knowledge import Knowledge
 from .models import Cabin
 from .pipeline import evaluate
-from .source import SeatsAeroSource, SourceError
+from .source import (
+    KeylessPathUnavailable,
+    SeatsAeroSource,
+    SourceError,
+    from_mcp_json,
+)
 
 
 def _data_dir() -> Path:
@@ -43,13 +51,30 @@ def cmd_check(args: argparse.Namespace) -> int:
     source = SeatsAeroSource()
     source_warnings: list[str] = []
     availabilities = []
-    try:
-        availabilities = source.search(
-            args.origin, args.destination, args.start, args.end, Cabin(args.cabin)
-        )
-    except SourceError as e:
-        # Never report a source failure as "no availability".
-        source_warnings.append(str(e))
+    mode = "none"
+
+    if args.mcp_json:
+        # Keyless path: consume availability the agent (Kiro) fetched via the
+        # seats.aero MCP server and saved to a file.
+        try:
+            payload = _json.loads(_Path(args.mcp_json).read_text(encoding="utf-8"))
+            availabilities = from_mcp_json(payload, Cabin(args.cabin))
+            mode = "mcp (keyless, via agent)"
+        except (OSError, ValueError) as e:
+            source_warnings.append(f"could not read --mcp-json: {e}")
+    else:
+        try:
+            availabilities = source.search(
+                args.origin, args.destination, args.start, args.end, Cabin(args.cabin)
+            )
+            mode = "partner API (keyed)"
+        except KeylessPathUnavailable as e:
+            # Honest: without a key there is no keyless REST path. Point at MCP.
+            source_warnings.append(str(e))
+            mode = "no key — use MCP via Kiro or set SEATS_AERO_API_KEY"
+        except SourceError as e:
+            # Never report a source failure as "no availability".
+            source_warnings.append(str(e))
 
     opps = evaluate(
         availabilities,
@@ -65,7 +90,7 @@ def cmd_check(args: argparse.Namespace) -> int:
             "query": {
                 "origin": args.origin, "destination": args.destination,
                 "start": args.start, "end": args.end, "cabin": args.cabin,
-                "live_search": source.has_live,
+                "mode": mode, "has_key": source.has_key,
             },
             "opportunities": [o.to_dict() for o in opps],
             "source_warnings": source_warnings,
@@ -76,7 +101,7 @@ def cmd_check(args: argparse.Namespace) -> int:
         _write_latest(opps, source_warnings, data_warnings)
         return 0
 
-    _print_human(args, opps, availabilities, source_warnings, data_warnings, source.has_live)
+    _print_human(args, opps, availabilities, source_warnings, data_warnings, mode)
     _write_latest(opps, source_warnings, data_warnings)
     return 0
 
@@ -94,8 +119,7 @@ def _write_latest(opps, source_warnings, data_warnings) -> None:
     )
 
 
-def _print_human(args, opps, availabilities, source_warnings, data_warnings, live) -> None:
-    mode = "live" if live else "cached (~60 days, keyless)"
+def _print_human(args, opps, availabilities, source_warnings, data_warnings, mode) -> None:
     print(f"\nAward check: {args.origin} -> {args.destination}  {args.start}..{args.end}  "
           f"{args.cabin}  [{mode}]\n")
     if source_warnings:
@@ -140,6 +164,8 @@ def main(argv: list[str] | None = None) -> int:
     c.add_argument("--cabin", default="business",
                    choices=[c.value for c in Cabin])
     c.add_argument("--seats", type=int, default=1, help="minimum seats")
+    c.add_argument("--mcp-json", help="keyless path: a JSON file of availability the "
+                                      "agent fetched via the seats.aero MCP server")
     c.add_argument("--balances", help="optional JSON file with your balances")
     c.add_argument("--all", action="store_true", help="show all, not just high-value")
     c.add_argument("--json", action="store_true", help="machine-readable output")
