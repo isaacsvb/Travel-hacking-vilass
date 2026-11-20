@@ -1,0 +1,41 @@
+{
+  "_meta": {
+    "description": "Floor and ceiling cents-per-point (CPP) valuations per program, aggregated from public valuation sources. Use FLOOR for decision-making: a redemption at or above the floor is a good use of points; below the floor, pay cash.",
+    "last_updated": "2026-11-20",
+    "staleness_days": 45,
+    "methodology": "floor = conservative valuation, ceiling = optimistic. Values in cents per point."
+  },
+  "credit_card_points": {
+    "amex_membership_rewards": {"name": "Amex Membership Rewards", "floor": 1.7, "ceiling": 2.2},
+    "chase_ultimate_rewards": {"name": "Chase Ultimate Rewards", "floor": 1.7, "ceiling": 2.05},
+    "bilt_rewards": {"name": "Bilt Rewards", "floor": 1.7, "ceiling": 2.2},
+    "capital_one": {"name": "Capital One Miles", "floor": 1.6, "ceiling": 1.85},
+    "citi_thankyou": {"name": "Citi ThankYou", "floor": 1.6, "ceiling": 1.9}
+  },
+  "airline_miles": {
+    "aeroplan": {"name": "Air Canada Aeroplan", "floor": 1.4, "ceiling": 1.5},
+    "alaska_atmos": {"name": "Alaska Atmos Rewards", "floor": 1.5, "ceiling": 1.6},
+    "american_aadvantage": {"name": "American AAdvantage", "floor": 1.3, "ceiling": 1.7},
+    "ana_mileage_club": {"name": "ANA Mileage Club", "floor": 1.4, "ceiling": 1.5},
+    "avianca_lifemiles": {"name": "Avianca LifeMiles", "floor": 1.3, "ceiling": 1.4},
+    "british_airways_avios": {"name": "British Airways Avios", "floor": 1.1, "ceiling": 1.4},
+    "iberia_avios": {"name": "Iberia Plus Avios", "floor": 1.3, "ceiling": 1.3},
+    "qatar_privilege_club": {"name": "Qatar Privilege Club Avios", "floor": 1.1, "ceiling": 1.4},
+    "cathay_asia_miles": {"name": "Cathay Asia Miles", "floor": 1.2, "ceiling": 1.3},
+    "delta_skymiles": {"name": "Delta SkyMiles", "floor": 1.0, "ceiling": 1.25},
+    "flying_blue": {"name": "Flying Blue", "floor": 1.2, "ceiling": 1.3},
+    "korean_air_skypass": {"name": "Korean Air SKYPASS", "floor": 1.4, "ceiling": 1.6},
+    "singapore_krisflyer": {"name": "Singapore KrisFlyer", "floor": 1.3, "ceiling": 1.4},
+    "tap_miles_and_go": {"name": "TAP Miles&Go", "floor": 1.2, "ceiling": 1.3},
+    "turkish_miles_and_smiles": {"name": "Turkish Miles&Smiles", "floor": 1.1, "ceiling": 1.3},
+    "united_mileageplus": {"name": "United MileagePlus", "floor": 1.1, "ceiling": 1.5},
+    "virgin_atlantic_flying_club": {"name": "Virgin Atlantic Flying Club", "floor": 1.0, "ceiling": 1.4}
+  },
+  "hotel_points": {
+    "world_of_hyatt": {"name": "World of Hyatt", "floor": 1.4, "ceiling": 1.7},
+    "marriott_bonvoy": {"name": "Marriott Bonvoy", "floor": 0.6, "ceiling": 0.7},
+    "hilton_honors": {"name": "Hilton Honors", "floor": 0.4, "ceiling": 0.5},
+    "ihg_one_rewards": {"name": "IHG One Rewards", "floor": 0.5, "ceiling": 0.5},
+    "accor_all": {"name": "Accor Live Limitless", "floor": 2.0, "ceiling": 2.2}
+  }
+}

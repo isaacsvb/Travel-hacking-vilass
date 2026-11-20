@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "description": "Airline alliance membership and loyalty programs. Used to determine which programs can book which airlines.",
+    "last_updated": "2026-11-20",
+    "staleness_days": 90
+  },
+  "star_alliance": {
+    "founded": 1997,
+    "members": [
+      {"airline": "Air Canada", "iata": "AC", "country": "Canada", "loyalty_program": "Aeroplan", "hubs": ["YYZ", "YUL", "YVR"]},
+      {"airline": "ANA", "iata": "NH", "country": "Japan", "loyalty_program": "ANA Mileage Club", "hubs": ["NRT", "HND"]},
+      {"airline": "Avianca", "iata": "AV", "country": "Colombia", "loyalty_program": "LifeMiles", "hubs": ["BOG"]},
+      {"airline": "Lufthansa", "iata": "LH", "country": "Germany", "loyalty_program": "Miles & More", "hubs": ["FRA", "MUC"]},
+      {"airline": "Singapore Airlines", "iata": "SQ", "country": "Singapore", "loyalty_program": "KrisFlyer", "hubs": ["SIN"]},
+      {"airline": "TAP Air Portugal", "iata": "TP", "country": "Portugal", "loyalty_program": "Miles&Go", "hubs": ["LIS"]},
+      {"airline": "Turkish Airlines", "iata": "TK", "country": "Turkey", "loyalty_program": "Miles&Smiles", "hubs": ["IST"]},
+      {"airline": "United Airlines", "iata": "UA", "country": "USA", "loyalty_program": "MileagePlus", "hubs": ["EWR", "IAH", "ORD", "SFO", "IAD", "DEN"]}
+    ]
+  },
+  "oneworld": {
+    "founded": 1999,
+    "members": [
+      {"airline": "Alaska Airlines", "iata": "AS", "country": "USA", "loyalty_program": "Atmos Rewards", "hubs": ["SEA"]},
+      {"airline": "American Airlines", "iata": "AA", "country": "USA", "loyalty_program": "AAdvantage", "hubs": ["DFW", "CLT", "MIA", "ORD", "PHL", "PHX"]},
+      {"airline": "British Airways", "iata": "BA", "country": "UK", "loyalty_program": "Executive Club (Avios)", "hubs": ["LHR"], "surcharge_warning": "High fuel surcharges on BA metal awards"},
+      {"airline": "Cathay Pacific", "iata": "CX", "country": "Hong Kong", "loyalty_program": "Asia Miles", "hubs": ["HKG"]},
+      {"airline": "Finnair", "iata": "AY", "country": "Finland", "loyalty_program": "Avios (Finnair Plus)", "hubs": ["HEL"]},
+      {"airline": "Iberia", "iata": "IB", "country": "Spain", "loyalty_program": "Iberia Plus (Avios)", "hubs": ["MAD"]},
+      {"airline": "Japan Airlines", "iata": "JL", "country": "Japan", "loyalty_program": "JAL Mileage Bank", "hubs": ["NRT", "HND"]},
+      {"airline": "Qantas", "iata": "QF", "country": "Australia", "loyalty_program": "Qantas Frequent Flyer", "hubs": ["SYD", "MEL"]},
+      {"airline": "Qatar Airways", "iata": "QR", "country": "Qatar", "loyalty_program": "Privilege Club (Avios)", "hubs": ["DOH"]}
+    ]
+  },
+  "skyteam": {
+    "founded": 2000,
+    "members": [
+      {"airline": "Aeromexico", "iata": "AM", "country": "Mexico", "loyalty_program": "Club Premier", "hubs": ["MEX"]},
+      {"airline": "Air France", "iata": "AF", "country": "France", "loyalty_program": "Flying Blue", "hubs": ["CDG"]},
+      {"airline": "Delta Air Lines", "iata": "DL", "country": "USA", "loyalty_program": "SkyMiles", "hubs": ["ATL", "DTW", "LAX", "MSP", "JFK", "SEA", "SLC"]},
+      {"airline": "KLM", "iata": "KL", "country": "Netherlands", "loyalty_program": "Flying Blue", "hubs": ["AMS"]},
+      {"airline": "Korean Air", "iata": "KE", "country": "South Korea", "loyalty_program": "SKYPASS", "hubs": ["ICN"]},
+      {"airline": "Virgin Atlantic", "iata": "VS", "country": "UK", "loyalty_program": "Flying Club", "hubs": ["LHR"]}
+    ]
+  },
+  "non_alliance_notable": [
+    {"airline": "Emirates", "iata": "EK", "country": "UAE", "loyalty_program": "Skywards", "hubs": ["DXB"]},
+    {"airline": "Etihad Airways", "iata": "EY", "country": "UAE", "loyalty_program": "Etihad Guest", "hubs": ["AUH"]},
+    {"airline": "JetBlue", "iata": "B6", "country": "USA", "loyalty_program": "TrueBlue", "hubs": ["JFK", "BOS", "FLL"]},
+    {"airline": "Southwest Airlines", "iata": "WN", "country": "USA", "loyalty_program": "Rapid Rewards", "hubs": ["DAL", "MDW", "BWI", "DEN", "LAS"]}
+  ]
+}

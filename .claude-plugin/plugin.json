@@ -1,0 +1,9 @@
+{
+  "name": "travel-hacker",
+  "description": "Plan trips with points, miles, awards, and cash. Searches award availability and cash fares, compares them by cents-per-point, uses your loyalty balances, and covers hotels, ferries, and Airbnb. Free-first: every core capability works with zero paid keys.",
+  "version": "0.1.0",
+  "author": {
+    "name": "isaacsvb"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,5 @@
+{
+  "name": "travel-hacker",
+  "description": "Free-first travel hacking toolkit for Codex. Award + cash flight search, points-vs-cash CPP math, loyalty balances, hotels, ferries, and Airbnb. Works with zero paid API keys.",
+  "version": "0.1.0"
+}

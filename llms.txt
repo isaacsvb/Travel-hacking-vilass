@@ -1,0 +1,43 @@
+# Travel Hacking Toolkit
+
+> Free-first toolkit for AI coding agents (Claude Code, Codex, OpenCode). Searches award availability and cash fares, compares them by cents-per-point, uses your loyalty balances, and covers hotels, ferries, and Airbnb. Every core capability works with ZERO paid API keys; paid keys are optional upgrades.
+
+Key concepts:
+- Free-first: keyless MCP servers are the always-on base; paid keys are upgrades behind graceful fallbacks.
+- Cash fares come from keyless metasearch (Skiplagged, Kiwi) plus optional Duffel.
+- Award availability comes from the seats.aero MCP: cached ~60 days keyless, live/alerts with Pro.
+- CPP (cents per point) = (cash price - award cash fees) / points * 100. At/above the program floor = good.
+- Transfer partners map bank points to loyalty programs; effective balance = direct + ratio-adjusted transferable.
+
+## Skills
+
+Orchestration:
+- plan-trip: guided end-to-end trip planner (the hero command).
+- compare-flights: unified award + cash comparison across all sources.
+- compare-hotels: hotel comparison across Trivago, Airbnb, optional LiteAPI.
+- trip-calculator: cash vs points answered with CPP math.
+- getting-started: first-run onboarding and setup detector.
+
+Flights:
+- seats-aero: award availability (keyless cached ~60 days; optional Pro for live/alerts).
+- duffel: optional per-fare-class cash pricing.
+- browser-collector: opt-in Playwright template, off by default, ToS-risky.
+
+Loyalty:
+- awardwallet: optional auto-pull of balances; falls back to user-supplied.
+- transfer-partners: cheapest transfer path from card points to programs.
+
+Reference (auto-load on context):
+- flight-search-strategy: canonical free-first search workflow.
+- points-valuations: CPP formula and floor/ceiling rules.
+- partner-awards: which program books which airline + reachability.
+- alliances: alliance membership and loyalty-program mapping.
+- sweet-spots: catalog of high-value redemptions.
+- fallback-and-resilience: per-tool graceful degradation.
+
+## Data files (local, no keys)
+- data/alliances.json
+- data/partner-awards.json
+- data/sweet-spots.json
+- data/transfer-partners.json
+- data/points-valuations.json

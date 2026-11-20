@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "description": "High-value award redemptions (fixed/known rates plus the partner booking path). Each entry pairs a route or region pattern with the cheapest program to book it. Rates devalue; verify before booking.",
+    "last_updated": "2026-11-20",
+    "staleness_days": 90
+  },
+  "sweet_spots": [
+    {
+      "id": "va-ana-japan-business",
+      "route_pattern": "US West Coast to Japan",
+      "cabin": "business",
+      "program": "virgin_atlantic_flying_club",
+      "operating_carrier": "ANA",
+      "miles_one_way": 52500,
+      "typical_surcharges_usd": 100,
+      "booking_path": "Search ANA space on united.com, book by phone with Virgin Atlantic Flying Club. Get a hold before transferring points.",
+      "notes": "Legendary redemption. Round-trip only on ANA via Virgin. Business ~52.5K, First ~72.5K from West Coast."
+    },
+    {
+      "id": "iberia-east-coast-madrid-business",
+      "route_pattern": "US East Coast to Madrid",
+      "cabin": "business",
+      "program": "iberia_avios",
+      "operating_carrier": "Iberia",
+      "miles_one_way": 40500,
+      "typical_surcharges_usd": 100,
+      "booking_path": "Book on iberia.com. Off-peak pricing. Transfer Avios from Amex/Chase/Bilt/Capital One.",
+      "notes": "Off-peak 40,500 Avios business class is one of the best transatlantic values."
+    },
+    {
+      "id": "qatar-qsuites-business",
+      "route_pattern": "US to Middle East / Asia via Doha",
+      "cabin": "business",
+      "program": "qatar_privilege_club",
+      "operating_carrier": "Qatar Airways",
+      "miles_one_way": 70000,
+      "typical_surcharges_usd": 100,
+      "booking_path": "Book Qsuites saver via Qatar Privilege Club (Avios). Low surcharges on Qatar metal.",
+      "notes": "Qsuites is a top business product. Hard to find 2+ seats; search early."
+    },
+    {
+      "id": "turkish-united-domestic",
+      "route_pattern": "US domestic on United metal",
+      "cabin": "economy",
+      "program": "turkish_miles_and_smiles",
+      "operating_carrier": "United",
+      "miles_one_way": 10000,
+      "typical_surcharges_usd": 5,
+      "booking_path": "Search United space, book via Turkish Miles&Smiles. 10K short-haul, 15K longer.",
+      "notes": "Cheap domestic United flights. Turkish booking can require phone and patience."
+    },
+    {
+      "id": "flying-blue-promo-europe",
+      "route_pattern": "US to Europe (Air France/KLM)",
+      "cabin": "business",
+      "program": "flying_blue",
+      "operating_carrier": "Air France/KLM",
+      "miles_one_way": 50000,
+      "typical_surcharges_usd": 250,
+      "booking_path": "Watch monthly Flying Blue Promo Rewards for discounted business-class awards. Transfer from Amex/Chase/Bilt/Capital One/Citi.",
+      "notes": "Promo awards vary monthly and can undercut the standard chart significantly."
+    },
+    {
+      "id": "aeroplan-lufthansa-first",
+      "route_pattern": "US to Europe (Lufthansa First)",
+      "cabin": "first",
+      "program": "aeroplan",
+      "operating_carrier": "Lufthansa",
+      "miles_one_way": 100000,
+      "typical_surcharges_usd": 250,
+      "booking_path": "Lufthansa First space usually opens ~15 days out. Book via Aeroplan. Transfer from Amex/Chase/Bilt/Capital One.",
+      "notes": "One of the few programs that can book Lufthansa First for partners."
+    },
+    {
+      "id": "tap-us-lisbon-business",
+      "route_pattern": "US to Lisbon (TAP metal)",
+      "cabin": "business",
+      "program": "tap_miles_and_go",
+      "operating_carrier": "TAP Air Portugal",
+      "miles_one_way": 63000,
+      "typical_surcharges_usd": 200,
+      "booking_path": "Book on TAP Miles&Go fixed chart. No direct US credit-card transfer partners, so earn via flying or Miles&Go promos.",
+      "notes": "Fixed-chart option to Portugal with a free Lisbon stopover on some fare rules."
+    }
+  ]
+}
